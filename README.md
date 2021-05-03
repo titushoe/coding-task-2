@@ -21,7 +21,8 @@ Exercise: implement a merge function for a list of intervals
       Unpacking objects: 100% (11/11), done.
       From https://github.com/titushoe/coding-task-2
       
-   - and now you could run:
+   - and now you could run: 
+   
     % echo " [25,30][2,19][14,23][4,8]" | go run merge-intervalls.go
     
     or
