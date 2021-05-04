@@ -30,3 +30,5 @@ Exercise: implement a merge function for a list of intervals
     or
     
     % go run merge-intervalls.go testfiles/test1.csv
+
+You could find remarks to this exercise after pull from github in the testfiles-folder
