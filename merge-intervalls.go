@@ -15,6 +15,11 @@ type MergeSlice [][]int
 
 var fileInput []string
 
+// GetIntvSliceFromStdInput convert string input to an intrevals array with
+// interval slices type int
+// - input  <string with interval slices> <char which splits the stringtext in interval-textslices
+// - return <intervals array>
+// todo: we should chech the right syntax of the input-text to prevent errors
 func GetIntvSliceFromStdInput(text string, splitchar string) [][]int {
 	inpList := make([][]int, 0)
 	var iStart, iEnd int
@@ -26,13 +31,13 @@ func GetIntvSliceFromStdInput(text string, splitchar string) [][]int {
 		s = ivSlices[i]
 		if len(s) > 0 {
 			//	fmt.Printf("  %d   %s \n ", i, s)
-			re := regexp.MustCompile(`[-]?\d[\d]*[\.]?[\d{2}]*`)
+			re := regexp.MustCompile(`[-]?\d[\d]*[\.]?[\d{2}]*`) // extract numbers
 			//			fmt.Printf("String contains any match: %v\n", re.MatchString(s)) // True
 			intvPairs := re.FindAllString(s, -1)
 			//for _, IntvDigit := range intvPairs {
 			//				fmt.Println(IntvDigit)
 			// }
-			if i, err := strconv.Atoi(intvPairs[0]); err == nil {
+			if i, err := strconv.Atoi(intvPairs[0]); err == nil { // convert to int
 				iStart = i
 			}
 			if i, err := strconv.Atoi(intvPairs[1]); err == nil {
@@ -50,6 +55,9 @@ func (s MergeSlice) Len() int           { return len(s) }
 func (s MergeSlice) Swap(i, j int)      { s[i], s[j] = s[j], s[i] }
 func (s MergeSlice) Less(i, j int) bool { return s[i][0] < s[j][0] }
 
+// merge  merge all interval-slices in intevals array
+// -input <intevals-array>
+// -return <merged intervals-array>
 func merge(intervals [][]int) [][]int {
 	sort.Sort(MergeSlice(intervals))
 	retList := make([][]int, 0)
@@ -85,6 +93,11 @@ func Max(a, b int) int {
 	}
 }
 
+// main func in module
+//  -check Args
+//		noArgs  := read interval-data from stdin
+//     one Arg <filename> := read data from .csv.file
+// all others exits with return-code > 0
 func main() {
 	if len(os.Args) == 1 {
 		println("   ", filepath.Base(os.Args[0]), "will read intervalls from stdin")
