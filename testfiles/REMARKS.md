@@ -1,7 +1,7 @@
 # Remarks to the implemented code
 
 At the first step the code ist designed to solve the exercise
-and get an result in a short time. ( in 2 days 3 & 5 hours )
+and get an result in a short time. ( in 2 days each 3 & 5 hours )
 
 ## Answers to the following questions
 
