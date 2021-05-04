@@ -1,11 +1,11 @@
 # Remarks to the implemented code
 
 At the first step the code ist designed to solve the exercise
-and get an result in a short time.
+and get an result in a short time. ( in 2 days 3 & 5 hours )
 
 ## Answeres to the following questions
 
-    1) How acts the code run-time and how gig is the storage-usage ?
+    1) How acts the code run-time and how big is the storage-usage ?
        The run-time and the storage-usage will be expanding if we had 
        more data in the input.
        If we would change the code for a better manner of this we 
