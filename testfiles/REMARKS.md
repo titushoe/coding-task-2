@@ -8,7 +8,7 @@ and get an result in a short time. ( in 2 days each 3 & 5 hours )
     1) How acts the code run-time and how big is the storage-usage ?
        The run-time and the storage-usage will be expanding if we had 
        more data in the input.
-       If we would change the code for a better manner of this we 
+       Before we could change the code for a better manner of this we 
        should test this code with bigger data sets and check the 
        bottlenecks with added go-packages like "benchmarks" or "perf" 
        and then we could see which code parts needs a better coding.
